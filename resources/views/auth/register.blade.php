@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -10,11 +8,11 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data" aria-label="{{ __('Register') }}">
+                    <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('username') }}</label>
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
@@ -70,26 +68,10 @@
                                 </button>
                             </div>
                         </div>
-
-
-                        <div class="mini_container">
-                          Cargar imagen:
-                          <!-- <input type="hidden" name="MAX_FILE_SIZE" value="30000"/> -->
-                          <input type="file" name="avatar" id="avatar"/>
-                          <span id="avatar_error" class="error"><?php echo isset( $errores["avatar"]) ? $errores["avatar"] : ""  ; ?></span>
-                        </div>
-
-                        <div class="imagenes_decoracion_registro">
-                          <p>"No existe modernidad sin una buena tradicion!"</p>
-                          <img class="imagenes"src="/images/imagen3.jpg" alt="foto_plato">
-                        </div>
-
-
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 @endsection

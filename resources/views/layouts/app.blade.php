@@ -18,10 +18,10 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
-    <link href="{{ asset('/css/estilos.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    {{-- <div id="app">
+    <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -38,7 +38,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">--}}
+                    <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -72,24 +72,8 @@
         </nav>
 
         <main class="py-4">
-              @yield('content')
+            @yield('content')
         </main>
     </div>
-    @footer
-          <div class="pie_de_pagina">
-            <div class="contenido">
-              <a href="#">Ayuda</a>
-              <a href="#">Informacion</a>
-              <a href="#">Privacidad</a>
-              <a href="#">Condiciones</a>
-            </div>
-            <div class="redes-sociales">
-              <a href="#"><i class="fa fa-facebook-f"></i></a>
-              <a href="#"><i class="fa fa-twitter-square"></i></a>
-              <a href="#"><i class="fa fa-instagram"></i></a>
-            </div>
-          </div>
-        @endfooter
-
 </body>
 </html>
