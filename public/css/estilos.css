@@ -83,7 +83,7 @@ input.espacio_de_relleno{
   width: 250px;
 }
 
-input.submit{
+button.submit{
   background-color: #0B3B39;
   color: white;
   padding: 14px 20px;
@@ -130,6 +130,7 @@ div.imagenes_decoracion_registro{
 div.imagenes_decoracion_login{
   display: none;
 }
+
 #bienvenido{
   display: none;
 }
