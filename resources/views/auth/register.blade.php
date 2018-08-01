@@ -10,12 +10,12 @@
                 <div class="card-body"> --}}
 
 <section class="cuerpo">
-<form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
+<form method="POST"  enctype="multipart/form-data" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
     @csrf
     <div class="container">
         <div class="container">
             <div class="panel">
-            <div class="form-group row">
+            <div class="mini_container">
                 <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                 <div class="col-md-6">
@@ -29,7 +29,7 @@
                 </div>
             </div>
 
-            <div class="form-group row">
+            <div class="mini_container">
                 <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}</label>
 
                 <div class="col-md-6">
@@ -43,7 +43,7 @@
                 </div>
             </div>
 
-            <div class="form-group row">
+            <div class="mini_container">
                 <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                 <div class="col-md-6">
@@ -57,7 +57,7 @@
                 </div>
             </div>
 
-            <div class="form-group row">
+            <div class="mini_container">
                 <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                 <div class="col-md-6">
@@ -71,13 +71,24 @@
                 </div>
             </div>
 
-            <div class="form-group row">
+            <div class="mini_container">
                 <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
 
                 <div class="col-md-6">
                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                 </div>
             </div>
+
+              <div class="mini_container">
+                Cargar imagen:
+              <!-- <input type="hidden" name="MAX_FILE_SIZE" value="30000"/> -->
+                <input type="file" name="avatar" id=""/>
+                <span id="avatar_error" class="error"><?php echo isset( $errores["avatar"]) ? $errores["avatar"] : ""  ; ?></span>
+              </div>
+
+
+
+
 
             <div class="form-group row mb-0">
                 <div class="col-md-6 offset-md-4">
