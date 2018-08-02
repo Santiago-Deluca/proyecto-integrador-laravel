@@ -97,7 +97,7 @@ button.submit{
 
 img.imagenes{
   width: 500px;
-  border: 2px solid #BDBDBD;
+  border: 1px solid #BDBDBD;
   border-radius: 2%;
 }
 
@@ -152,7 +152,7 @@ header div.cabecera-de-pagina {
   width: 98%;
   margin: 0, auto;
   min-width: 480px;
-  height: 50px;
+  height: 45px;
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
 }
@@ -184,6 +184,7 @@ header nav.navegacion-principal a {
   list-style-type:none;
   text-transform: uppercase;
   transition: all .6s ease;
+  padding: 8px;
 }
 
 header nav.navegacion-principal a:hover {
@@ -224,6 +225,7 @@ header nav.navegacion-principal a:last-child:hover {
     display: block;
     padding-top: 0px;
     margin-right: 20px;
+
   }
   header nav.navegacion-principal a {
     margin-right:10px;
@@ -259,14 +261,15 @@ header div.menu-movil span {
 
 /*** FOOTER ***/
 footer div.pie_de_pagina {
-  height:110px;
+  height:45px;
   background-color:#0B3B39;
   border-top: 1px solid;
-  margin-top: 10px;
+   margin-top: 30px;
+  padding : 20px ;
 }
 
 footer div.contenido{
-  margin-top: 30px;
+  margin-top: 15px;
   display: flex;
   justify-content: center;
 }

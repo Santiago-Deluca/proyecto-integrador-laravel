@@ -39,7 +39,7 @@
                 @guest
                     <a href="{{ route('login') }}">Ingresar</a>
                     <a href="{{ route('register') }}">Registro</a>
-                    
+
                 @else
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }} <span class="caret"></span>
@@ -72,14 +72,14 @@
             <a href="#">Privacidad</a>
             <a href="#">Condiciones</a>
             </div>
-            <div class="redes-sociales">
+            <!-- <div class="redes-sociales">
             <a href="#"><i class="fa fa-facebook-f"></i></a>
             <a href="#"><i class="fa fa-twitter-square"></i></a>
             <a href="#"><i class="fa fa-instagram"></i></a>
-            </div>
+            </div> -->
         </div>
-    </footer>        
+    </footer>
 
-    
+
 </body>
 </html>
