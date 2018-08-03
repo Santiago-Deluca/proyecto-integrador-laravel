@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class RegisterController extends Controller
 {
@@ -28,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/index';
 
     /**
      * Create a new controller instance.
@@ -53,10 +54,10 @@ class RegisterController extends Controller
             'username' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
-
-            // 'avatar' => 'required',
+            'avatar' => 'required',
         ]);
     }
+   
 
     /**
      * Create a new user instance after a valid registration.
@@ -66,11 +67,16 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $file = $data['avatar'];
+        $photoname = uniqid().".".$file->getClientOriginalExtension();
+        $file = $file->move(public_path().'/images/avatar/',$photoname);
+
         return User::create([
             'name' => $data['name'],
             'username' => $data['username'],
             'email' => $data['email'],
             'password' =>  bcrypt($data['password']),
+            'avatar' => $photoname,
         ]);
     }
 }
