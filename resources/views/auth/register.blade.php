@@ -15,7 +15,7 @@
             <input id="name" type="text" class="espacio_de_relleno form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
             @if ($errors->has('name'))
               <span class="error" role="alert">
-                <strong>{{ $errors->first('name') }}</strong>
+                {{ $errors->first('name') }}
               </span>
             @endif
           </div>
@@ -25,8 +25,8 @@
           <div class="">
             <input id="username" type="text" class="espacio_de_relleno form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" required autofocus>
             @if ($errors->has('username'))
-              <span class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('username') }}</strong>
+              <span class="error" role="alert">
+                {{ $errors->first('username') }}
               </span>
             @endif
           </div>
@@ -36,8 +36,8 @@
             <div class="">
               <input id="email" type="email" class="espacio_de_relleno form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
               @if ($errors->has('email'))
-              <span class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('email') }}</strong>
+              <span class="error" role="alert">
+                {{ $errors->first('email') }}
               </span>
             @endif
           </div>
@@ -49,7 +49,7 @@
             <input id="password" type="password" class="espacio_de_relleno form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" value="{{ old('password') }}" required>
             @if ($errors->has('password'))
               <span class="error" role="alert">
-                <strong>{{ $errors->first('password') }}</strong>
+                {{ $errors->first('password') }}
               </span>
             @endif
           </div>  
