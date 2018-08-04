@@ -204,10 +204,12 @@ header nav.navegacion-principal a:last-child:hover {
 
 @media only screen and (min-width:480px){
   header nav.navegacion-principal {
-    width: 65%;
+    /*width: 65%;*/
     float: right;
     text-align: right;
-    display: block;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     padding-top: 0px;
     margin-right: 20px;
   }
@@ -219,10 +221,12 @@ header nav.navegacion-principal a:last-child:hover {
 }
 @media only screen and (min-width:768px){
   header nav.navegacion-principal {
-    width: 65%;
+    /*width: 65%;*/
     float: right;
     text-align: right;
-    display: block;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     padding-top: 0px;
     margin-right: 20px;
 
