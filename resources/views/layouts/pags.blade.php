@@ -16,7 +16,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Oswald|PT+Sans" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Oswald|PT+Sans" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
@@ -30,13 +30,16 @@
                 <div class="menu-movil">
             <span></span>
             <span></span>
-                <span></span>
+            <span></span>
             </div>
             <!-- Right Side Of Navbar -->
             <nav class="navegacion-principal">
                 @guest
                 @else
                     <img src="./images/avatar/{{Auth::user()->avatar}}" alt="avatar" width=60px height=60px  style=border-radius:50%>
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }} <span class="caret"></span>
+                    </a>
                 @endguest
                     <a href="{{ route('index') }}">Home</a>
                     <a href="{{ route('faq') }}">Preguntas Frecuentes</a>
@@ -46,9 +49,7 @@
                     <a href="{{ route('register') }}">Registro</a>
 
                 @else
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }} <span class="caret"></span>
-                    </a>
+
                     <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">

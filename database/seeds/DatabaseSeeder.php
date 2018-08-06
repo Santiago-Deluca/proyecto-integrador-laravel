@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
       //     'password' => password_hash('guillecapo', PASSWORD_DEFAULT),
       //   ]);
         $users = factory(App\User::class, 50)->create();
+                
       }
 
 }

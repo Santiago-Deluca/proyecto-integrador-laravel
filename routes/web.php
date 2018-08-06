@@ -25,3 +25,7 @@ Route::get('/faq', function () {
 })->name('faq');
 
 Auth::routes();
+
+Route::get('/perfil', function () {
+    return view('perfil');
+});
