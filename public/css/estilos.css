@@ -82,6 +82,19 @@ input.espacio_de_relleno{
   padding: 10px;
   width: 250px;
 }
+textarea.espacio_de_relleno_area{
+  background-color: white;
+  border: none;
+  padding: 10px;
+  width: 250px; height: 65px;
+}
+
+select.espacio_de_relleno{
+  background-color: white;
+  border: none;
+  padding: 10px;
+  width: 270px;
+}
 
 button.submit{
   background-color: #0B3B39;

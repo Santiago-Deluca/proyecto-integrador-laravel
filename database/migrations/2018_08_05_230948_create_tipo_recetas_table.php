@@ -13,7 +13,7 @@ class CreateTipoRecetasTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo-recetas', function (Blueprint $table) {
+        Schema::create('tipo_recetas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('tipo');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateTipoRecetasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo-recetas');
+        Schema::dropIfExists('tipo_recetas');
     }
 }
