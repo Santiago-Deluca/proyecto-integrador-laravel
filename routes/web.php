@@ -29,3 +29,11 @@ Auth::routes();
 Route::get('/perfil', function () {
     return view('perfil');
 });
+
+/* RECETAS */
+Route::get('/recetas', 'RecetasController@index');
+Route::get('/recetas/create', 'RecetasController@create');
+Route::post('/recetas', 'RecetasController@store')->name('recetasStore');
+Route::get('/recetas/{id}/edit', 'RecetasController@edit');
+Route::patch('/recetas/{id}', 'RecetasController@update');
+Route::delete('/recetas/{id}', 'RecetasController@destroy');

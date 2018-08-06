@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Oswald|PT+Sans" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/estilos.css') }}" rel="stylesheet">
 </head>
 <body>
     <header>
