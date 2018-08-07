@@ -2,12 +2,12 @@
 
 @section('content')
     <section class="cuerpo">
-      <div class="info_usuario">
-        <div class="imagen_perfil">
+      <div class="info-usuario">
+        <div class="imagen-perfil">
         	  <img src="./images/avatar/{{Auth::user()->avatar}}" alt="avatar" width=200px height=200px  style=border-radius:50% >
         </div>
         <p>{{Auth::user()->name}}</p>
-        <p>{{Auth::user()->email}}</p>
+        <p class="email-usuario">{{Auth::user()->email}}</p>
       </div>
 
       <div class="container">
