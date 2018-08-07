@@ -4,10 +4,14 @@
     <section class="cuerpo">
       <div class="info-usuario">
         <div class="imagen-perfil">
+          @if (Auth::check())
         	  <img src="./images/avatar/{{Auth::user()->avatar}}" alt="avatar" width=200px height=200px  style=border-radius:50% >
+          @endif
         </div>
+        @if (Auth::check())
         <p>{{Auth::user()->name}}</p>
         <p class="email-usuario">{{Auth::user()->email}}</p>
+        @endif
       </div>
 
       <div class="container">
