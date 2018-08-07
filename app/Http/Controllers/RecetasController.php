@@ -25,7 +25,7 @@ class RecetasController extends Controller
      */
     public function create()
     {
-        return view('recetas.create');	
+        return view('recetas.create');
     }
 
     /**
@@ -46,7 +46,7 @@ class RecetasController extends Controller
             'descripcion' => request('descripcion'),
             'tipo' => request('tipo'),
             'apto_celiacos' => request('apto_celiacos'),
-            'foto_comida' => $photoname,
+            'foto_comida' => $photoname->nullable,
         ]);
         return redirect('/');
     }
@@ -71,8 +71,8 @@ class RecetasController extends Controller
     public function edit($id)
     {
 
-        $receta = DB::table('recetas')->find($id);       
-        return view('recetas.show', compact('receta'));      
+        $receta = DB::table('recetas')->find($id);
+        return view('recetas.show', compact('receta'));
        /* return View::make('recetas.show')->with('receta', $receta);  */
 
     }
