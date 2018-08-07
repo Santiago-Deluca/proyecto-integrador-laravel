@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
       //     'email' => 'guille@gmail.com',
       //     'password' => password_hash('guillecapo', PASSWORD_DEFAULT),
       //   ]);
-        // $users = factory(App\User::class, 50)->create();
+        $users = factory(App\User::class, 50)->create();
         $recetas= factory(App\Receta::class,7)->create();
 
       }

@@ -20,7 +20,7 @@ class CreateRecetasTable extends Migration
             $table->string('descripcion');
             $table->integer('tipo');
             $table->boolean('apto_celiacos');
-            $table->string('foto_comida');
+            $table->string('foto_comida')->nullable();
             $table->timestamps();
         });
     }

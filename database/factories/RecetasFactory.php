@@ -7,8 +7,8 @@ $factory->define(App\Receta::class, function (Faker $faker) {
 
     return [
       'nombre' => $nombre,
-      'id_usuario' =>$faker->numberBetween(1,3),
-      'descripcion' =>$nombre.$faker->sentence(10,true),
+      'id_usuario' =>$faker->numberBetween(1,50),
+      'descripcion' =>$nombre.$faker->sentence(5,true),
       'tipo' =>$faker->numberBetween(1,5),
       // 'photo' => $photo,
       'apto_celiacos' =>$faker->boolean,

@@ -15,7 +15,7 @@
         @foreach (\App\Receta::all() as $receta)
         <div class="posteos">
           <h3>{{$receta->nombre}}</h3>
-          <img class="imagen_posteo"src="" alt="imagen_posteo">
+          <img class="imagen_posteo"src="\images\fotos_recetas\photobrownie.jpg" alt="imagen_posteo">
           <p>Tipo de receta: {{$receta->tipo}}</p>
           <textarea name="descripcion" rows="8" cols="80" >{{$receta->descripcion}}</textarea>
           <a href="\app\Http\Controllers\RecetasController">Eliminar publicacion</a>
