@@ -4,7 +4,7 @@
 
 
   <section class="cuerpo">
-    <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
+    <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}" enctype="multipart/form-data">
       @csrf
 
         <div class="container">
@@ -56,11 +56,11 @@
             </div>
 
             <div class="mini_container">
-              <label for="avatar">{{ __('avatar') }}</label>
-              <input id="avatar" type="" class="espacio_de_relleno{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-                @if ($errors->has('password'))
+              <label for="avatar">{{ __('Ingresa tu foto') }}</label>
+              <input id="avatar" type="file" class="{{ $errors->has('avatar') ? ' is-invalid' : '' }}" name="avatar" required>
+                @if ($errors->has('avatar'))
                   <span class="error" role="alert">
-                    <strong>{{ $errors->first('password') }}</strong>
+                    <strong>{{ $errors->first('avatar') }}</strong>
                   </span>
                 @endif
             </div>

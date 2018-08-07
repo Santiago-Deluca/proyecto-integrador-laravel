@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Request;
+// use App\Mail\Notificacion;
 
 class RegisterController extends Controller
 {
@@ -23,6 +25,8 @@ class RegisterController extends Controller
     */
 
     use RegistersUsers;
+
+
 
     /**
      * Where to redirect users after registration.
@@ -58,7 +62,7 @@ class RegisterController extends Controller
             // 'avatar' => 'required',
         ]);
     }
-   
+
 
     /**
      * Create a new user instance after a valid registration.
@@ -68,7 +72,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $file = $data['avatar'];
+        $file = Request::file('avatar');
         $photoname = uniqid().".".$file->getClientOriginalExtension();
         $file = $file->move(public_path().'/images/avatar/',$photoname);
 
@@ -79,5 +83,7 @@ class RegisterController extends Controller
             'password' =>  bcrypt($data['password']),
             'avatar' => $photoname,
         ]);
+
+        // \Mail::to($user)->send(new Notificacion($user));
     }
 }
