@@ -28,7 +28,7 @@ Auth::routes();
 
 Route::get('/perfil', function () {
     return view('perfil');
-});
+})->name('perfil');
 
 /* RECETAS */
 Route::get('/recetas', 'RecetasController@index');

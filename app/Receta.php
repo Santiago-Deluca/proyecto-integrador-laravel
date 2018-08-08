@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Receta extends Model
 {
     protected $fillable = [
-          'nombre', 'descripcion', 'tipo', 'foto_comida','id_usuario' ,'apto_celiacos'
+          'nombre', 'descripcion', 'tipo', 'foto_comida', 'id_usuario', 'apto_celiacos'
       ];
 }
 
@@ -19,3 +19,4 @@ class Receta extends Model
 //         // $pelicula = \App\Movie::where("id", $id)->first();
 //         return view('mostrarPelicula', compact("pelicula"));
 //     }
+  

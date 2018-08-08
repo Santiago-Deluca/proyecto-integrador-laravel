@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Auth;
+use Illuminate\Support\Facades\Auth;
+use App\Receta;
 
 class RecetasController extends Controller
 {
@@ -36,17 +37,18 @@ class RecetasController extends Controller
      */
     public function store(Request $request)
     {
-        $file = $request['avatar'];
+
+        $file = $request['foto_comida'];
         $photoname = uniqid().".".$file->getClientOriginalExtension();
         $file = $file->move(public_path().'/images/recetas/',$photoname);
 
-        Post::create([
+    Receta::create([
             'id_usuario' => Auth::user()->id,
             'nombre' => request('nombre'),
             'descripcion' => request('descripcion'),
             'tipo' => request('tipo'),
-            'apto_celiacos' => request('apto_celiacos'),
-            'foto_comida' => $photoname->nullable,
+            'apto_celiacos' => ($request->has('apto_celiacos')) ? request('apto_celiacos') : 0,
+            'foto_comida' => $photoname,
         ]);
         return redirect('/');
     }

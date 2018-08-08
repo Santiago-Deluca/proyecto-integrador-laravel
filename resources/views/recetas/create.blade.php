@@ -1,7 +1,6 @@
 @extends('layouts.pags')
 
 @section('content')
-
 <section class="cuerpo">
   <form method="POST" enctype="multipart/form-data" action="{{ route('recetasStore') }}" id="recetasform">
   @csrf  
@@ -19,22 +18,22 @@
         </div>      
         <div class="mini_container">
           <label for="tipo">Tipo: </label>
-          <select class="espacio_de_relleno">
-            <option value="0" disabled>Seleccione por favor</option>
+          <select name="tipo" class="espacio_de_relleno" form="recetasform">
+            {{-- <option value="0" disabled>Seleccione por favor</option> --}}
             @foreach (\App\TipoReceta::all() as $tipo)
               <option value="{{ $tipo -> id }}">{{ $tipo -> tipo }}</option>
             @endforeach
           </select>
         </div>
         <div class="mini_container">
-          <div class="form-check">
+          {{-- <div class="form-check"> --}}
             <label class="form-check-label" for="apto_celiacos">Apto Celiacos: </label>            
             <input class="form-check-input" type="checkbox" name="apto_celiacos" id="apto_celiacos">
-          </div>    
+          {{-- </div>     --}}
         </div> 
         <div class="mini_container">
           Cargar imagen:
-          <input type="file" name="foto_comida" id=""/>
+          <input type="file" name="foto_comida" id="foto_comida"/>
         </div>
         <div class="mini_container">
           <div class="">

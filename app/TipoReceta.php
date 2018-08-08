@@ -6,8 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class TipoReceta extends Model
 {
-    use Notifiable;
-
+    
     /**
      * The attributes that are mass assignable.
      *
