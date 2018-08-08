@@ -329,3 +329,91 @@ footer div.redes-sociales a {
   font-size: 1em;
   margin-right: 20px;
 }
+
+
+/* PERFIL USUARIO */
+
+.info-usuario {
+  text-align: center;
+  padding-top: 30px;
+
+}
+
+.nombre-usuario{
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+}
+
+.email-usuario {
+  color: #979A9A;
+}
+
+.container-publicaciones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.posteos{
+  border: 1px solid #979A9A;
+  border-radius: 1%;
+  width: 800px;
+  height: 700px;
+  margin-bottom: 100px;
+}
+
+.posteos h3, a, textarea, p {
+    font-family:'Oswald', sans-serif;
+}
+
+.imagen-posteo {
+  width: 800px;
+  height: 300px;
+  border-radius: 1%;
+}
+
+/* div contenedor de foto y nombre del publicador */
+.gestor-posteo {
+  display: flex;
+  flex-direction: row;
+}
+.nombre-receta {
+  margin: 20px;
+}
+.tipo-receta{
+  margin: 20px;
+}
+
+/* avatar que aparece en la publicacion */
+.avatar-publicacion {
+  margin: 12px 5px 0px 20px;
+}
+
+/* texto que aparece al lado del nombre y avatar al compartir recetas */
+.compartio-receta {
+  margin: 20px 0px 0px 7px;
+  font-size: 15px;
+  color: #979A9A;
+}
+
+/* textarea */
+.descripcion-receta{
+
+  font-size: 15px;
+  margin-left: 30px;
+  border-radius: 2%;
+  border: white;
+  height: 90px;
+  padding: 10px;
+}
+
+.eliminar-publicacion{
+  text-decoration: none;
+  color: #A93226  ;
+  font-size: 15px;
+  display: flex;
+  justify-content: flex-end;
+  margin: 50px;
+
+}
