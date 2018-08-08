@@ -27,7 +27,7 @@
           </div>
 
           <h3 class="nombre-receta">{{$receta->nombre}}</h3>
-          <img class="imagen-posteo" src="\images\fotos_recetas\photobrownie.jpg" alt="imagen_posteo">
+          <img class="imagen-posteo" src="/images/recetas/{{$receta->foto_comida}}" alt="imagen_posteo">
           <p class="tipo-receta">Tipo de receta: {{$receta->tipo}}</p>
           <textarea class="descripcion-receta" name="descripcion" rows="8" cols="80" >{{$receta->descripcion}}</textarea>
           <a class="eliminar-publicacion" href="\app\Http\Controllers\RecetasController">Eliminar publicacion</a>
