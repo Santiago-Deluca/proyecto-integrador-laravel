@@ -42,7 +42,7 @@ class RecetasController extends Controller
         $photoname = uniqid().".".$file->getClientOriginalExtension();
         $file = $file->move(public_path().'/images/recetas/',$photoname);
 
-    Receta::create([
+        Receta::create([
             'id_usuario' => Auth::user()->id,
             'nombre' => request('nombre'),
             'descripcion' => request('descripcion'),
@@ -50,7 +50,11 @@ class RecetasController extends Controller
             'apto_celiacos' => ($request->has('apto_celiacos')) ? request('apto_celiacos') : 0,
             'foto_comida' => $photoname,
         ]);
-        return redirect('/');
+
+        // redirect
+        // Session::flash('message', 'Creado exitosamente');
+        // return Redirect::to('perfil');
+        return view('perfil');
     }
 
     /**
@@ -99,6 +103,13 @@ class RecetasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // delete
+        $receta = Receta::find($id);
+        $receta->delete();
+
+        // redirect
+        // Session::flash('message', 'Eliminado exitosamente');
+        //return Redirect::to('perfil');
+        return view('perfil');        
     }
 }

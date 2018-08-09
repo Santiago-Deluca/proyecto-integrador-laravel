@@ -15,8 +15,8 @@
       </div>
 
       <div class="container-publicaciones">
-
-        @foreach (\App\Receta::all() as $receta)
+        {{$recetas = \App\Receta::simplePaginate(3)}}
+        @foreach ($recetas as $receta)
         <div class="posteos">
           <div class="gestor-posteo">
             @if (Auth::check())
@@ -28,10 +28,22 @@
 
           <h3 class="nombre-receta">{{$receta->nombre}}</h3>
           <img class="imagen-posteo" src="/images/recetas/{{$receta->foto_comida}}" alt="imagen_posteo">
-          <p class="tipo-receta">Tipo de receta: {{$receta->tipo}}</p>
+          <p class="tipo-receta">Tipo de receta: {{\App\TipoReceta::find($receta->tipo)->tipo}}</p>
           <textarea class="descripcion-receta" name="descripcion" rows="8" cols="80" >{{$receta->descripcion}}</textarea>
-          <a class="eliminar-publicacion" href="\app\Http\Controllers\RecetasController">Eliminar publicacion</a>
+          <form action="{{ URL::to('recetas/' . $receta->id) }}" method="post">
+            {{ csrf_field() }}
+            {{ method_field('DELETE') }}
+            {{-- <input  type="submit" class="submit" name="Submit" value="Eliminar" /> --}}
+            <div class="mini_container">
+              <div class="">
+                <button type="submit" class="submit">
+                  Eliminar
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
         @endforeach
+        {{$recetas->withPath('perfil')}}
 
 @endsection

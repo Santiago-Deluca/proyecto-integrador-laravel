@@ -25,7 +25,7 @@
     <header>
         <div class="cabecera-de-pagina">
             <div class="logo">
-            <img src="images/Logo.png" alt="logo">
+            <img src="./images/Logo.png" alt="logo">
             </div>
                 <div class="menu-movil">
             <span></span>
