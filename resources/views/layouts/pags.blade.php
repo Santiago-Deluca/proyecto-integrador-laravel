@@ -25,7 +25,7 @@
     <header>
         <div class="cabecera-de-pagina">
             <div class="logo">
-            <img src="./images/Logo.png" alt="logo">
+            <img src="/images/Logo.png" alt="logo">
             </div>
                 <div class="menu-movil">
             <span></span>
@@ -36,7 +36,7 @@
             <nav class="navegacion-principal">
                 @guest
                 @else
-                    <img src="./images/avatar/{{Auth::user()->avatar}}" alt="avatar" width=60px height=60px  style=border-radius:50%>
+                    <img src="/images/avatar/{{Auth::user()->avatar}}" alt="avatar" width=60px height=60px  style=border-radius:50%>
                  <!--<a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ route('perfil') }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }} <span class="caret"></span>
                     </a>-->

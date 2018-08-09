@@ -5,7 +5,7 @@
       <div class="info-usuario">
         <div class="imagen-perfil">
           @if (Auth::check())
-        	  <img src="./images/avatar/{{Auth::user()->avatar}}" alt="avatar" width=200px height=200px  style=border-radius:50% >
+        	  <img src="/images/avatar/{{Auth::user()->avatar}}" alt="avatar" width=200px height=200px  style=border-radius:50% >
           @endif
         </div>
         @if (Auth::check())
@@ -13,14 +13,18 @@
         <p class="email-usuario">{{Auth::user()->email}}</p>
         @endif
       </div>
+      <div class="boton-nueva-publicacion">
+      <a class="nueva-publicacion" href="/recetas/create">Crear nueva publicacion</a>
+    </div>
 
       <div class="container-publicaciones">
         {{$recetas = \App\Receta::simplePaginate(3)}}
+
         @foreach ($recetas as $receta)
         <div class="posteos">
           <div class="gestor-posteo">
             @if (Auth::check())
-              <img class="avatar-publicacion" src="./images/avatar/{{Auth::user()->avatar}}" alt="avatar" width=30px height=30px style=border-radius:50% >
+              <img class="avatar-publicacion" src="/images/avatar/{{Auth::user()->avatar}}" alt="avatar" width=30px height=30px style=border-radius:50% >
             @endif
             <p class="nombre-usuario">{{Auth::user()->name}}</p>
             <p class="compartio-receta">compartio una receta</p>

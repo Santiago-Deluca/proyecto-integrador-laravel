@@ -348,6 +348,25 @@ footer div.redes-sociales a {
   color: #979A9A;
 }
 
+.boton-nueva-publicacion{
+  text-align: center;
+  margin: 30px;
+
+
+}
+
+.nueva-publicacion{
+  text-decoration: none;
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  background-color: #0B3B39;
+  width: 200px;
+  border-radius: 2%;
+  text-align: center;
+  padding: 10px;
+}
+
 .container-publicaciones {
   display: flex;
   flex-direction: column;
@@ -385,6 +404,7 @@ footer div.redes-sociales a {
   margin: 20px;
 }
 
+
 /* avatar que aparece en la publicacion */
 .avatar-publicacion {
   margin: 12px 5px 0px 20px;
@@ -399,7 +419,7 @@ footer div.redes-sociales a {
 
 /* textarea */
 .descripcion-receta{
-
+  font-family: 'Oswald', sans-serif;
   font-size: 15px;
   margin-left: 30px;
   border-radius: 2%;
@@ -416,4 +436,21 @@ footer div.redes-sociales a {
   justify-content: flex-end;
   margin: 50px;
 
+}
+.page-item{
+  margin-right: 40px;
+}
+.page-link{
+  text-decoration: none;
+  color: #0B3B39;
+}
+.pagination{
+  list-style: none;
+  display: flex;
+}
+
+/* FEED */
+
+.container-publicaciones h2{
+  color: #0B3B39;
 }
